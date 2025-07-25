@@ -129,33 +129,93 @@
     color: #FFD700;
 }
 
-#background-video {
-    position: fixed; /* Fixa o vídeo na viewport */
-    right: 0;
-    bottom: 0;
-    min-width: 100%;
-    min-height: 100%;
-    width: auto;
-    height: auto;
-    z-index: -1; /* Garante que o vídeo fique atrás de todo o conteúdo */
-    filter: blur(8px); /* Aplica o desfoque ao vídeo. Ajuste o valor (ex: 5px, 10px) conforme necessário */
-    object-fit: cover; /* Garante que o vídeo cubra toda a área, cortando se necessário */
+/* Estilos para o nome RabuDiGalu com cores de rabo de galo e efeito neon */
+.rabudigalu-colorful span {
+    display: inline-block; /* Garante que o span aceite transformações e shadows */
+    font-weight: bold; /* Para dar mais corpo à letra */
+    transition: all 0.2s ease-in-out; /* Transição suave para qualquer efeito futuro */
 }
 
-.video-overlay {
-    background: rgba(0, 0, 0, 0.4); /* Uma sobreposição escura para ajudar na legibilidade do texto */
-    backdrop-filter: blur(5px); /* Aplica um desfoque adicional à área atrás do conteúdo. Ajuste o valor */
-    z-index: 0; /* Garante que a sobreposição esteja acima do vídeo, mas abaixo do conteúdo */
+.rabudigalu-colorful span:nth-child(1) {
+    color: #FFD700; /* Gold */
+    text-shadow: 0 0 5px #FFD700, 0 0 10px #FFD700, 0 0 15px #FFC400;
+}
+.rabudigalu-colorful span:nth-child(2) {
+    color: #FFC400; /* Brighter Gold */
+    text-shadow: 0 0 5px #FFC400, 0 0 10px #FFC400, 0 0 15px #FFAB00;
+}
+.rabudigalu-colorful span:nth-child(3) {
+    color: #FFAB00; /* Orange-Gold */
+    text-shadow: 0 0 5px #FFAB00, 0 0 10px #FFAB00, 0 0 15px #FF8C00;
+}
+.rabudigalu-colorful span:nth-child(4) {
+    color: #FF8C00; /* Dark Orange */
+    text-shadow: 0 0 5px #FF8C00, 0 0 10px #FF8C00, 0 0 15px #FF6F00;
+}
+.rabudigalu-colorful span:nth-child(5) {
+    color: #FF6F00; /* Warm Amber */
+    text-shadow: 0 0 5px #FF6F00, 0 0 10px #FF6F00, 0 0 15px #FF4F00;
+}
+.rabudigalu-colorful span:nth-child(6) {
+    color: #FF4F00; /* Deep Orange-Red */
+    text-shadow: 0 0 5px #FF4F00, 0 0 10px #FF4F00, 0 0 15px #FF3333;
+}
+.rabudigalu-colorful span:nth-child(7) {
+    color: #FF3333; /* Vibrant Red */
+    text-shadow: 0 0 5px #FF3333, 0 0 10px #FF3333, 0 0 15px #E60000;
+}
+.rabudigalu-colorful span:nth-child(8) {
+    color: #E60000; /* Strong Red */
+    text-shadow: 0 0 5px #E60000, 0 0 10px #E60000, 0 0 15px #FF6666;
+}
+.rabudigalu-colorful span:nth-child(9) {
+    color: #FF6666; /* Lighter Red */
+    text-shadow: 0 0 5px #FF6666, 0 0 10px #FF6666, 0 0 15px #FF9999;
+}
+.rabudigalu-colorful span:nth-child(10) {
+    color: #FF9999; /* Pinkish Red */
+    text-shadow: 0 0 5px #FF9999, 0 0 10px #FF9999, 0 0 15px #FFD700;
 }
 
-/* Estilos para o nome RabuDiGalu com cores de rabo de galo (AJUSTADO PARA MELHOR VISIBILIDADE) */
-.rabudigalu-colorful span:nth-child(1) { color: #FFD700; } /* Gold - Dourado */
-.rabudigalu-colorful span:nth-child(2) { color: #FFC400; } /* Brighter Gold - Dourado Mais Claro */
-.rabudigalu-colorful span:nth-child(3) { color: #FFAB00; } /* Orange-Gold - Laranja Dourado */
-.rabudigalu-colorful span:nth-child(4) { color: #FF8C00; } /* Dark Orange - Laranja Escuro (ainda vibrante) */
-.rabudigalu-colorful span:nth-child(5) { color: #FF6F00; } /* Warm Amber - Âmbar Quente */
-.rabudigalu-colorful span:nth-child(6) { color: #FF4F00; } /* Deep Orange-Red - Laranja Avermelhado Profundo */
-.rabudigalu-colorful span:nth-child(7) { color: #FF3333; } /* Vibrant Red - Vermelho Vibrante (substitui o Dark Red) */
-.rabudigalu-colorful span:nth-child(8) { color: #E60000; } /* Strong Red - Vermelho Forte (para bom contraste) */
-.rabudigalu-colorful span:nth-child(9) { color: #FF6666; } /* Lighter Red - Vermelho Mais Claro */
-.rabudigalu-colorful span:nth-child(10) { color: #FF9999; } /* Pinkish Red - Vermelho Rosado */
+/* Mantenha o restante do seu style.css como está */
+/* Swiper custom styles */
+.instagram-swiper {
+    width: 100%;
+    height: 400px; /* Altura fixa para o carrossel */
+    margin-bottom: 2rem;
+}
+
+.swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #0b0b0b; /* Fundo escuro para os slides */
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease-in-out;
+}
+
+.swiper-slide:hover img {
+    transform: scale(1.05);
+}
+
+/* Navegação e Paginação Swiper */
+.swiper-button-next,
+.swiper-button-prev {
+    color: #FFD700 !important; /* Cor dos botões de navegação */
+}
+
+.swiper-pagination-bullet {
+    background: rgba(255, 255, 255, 0.5) !important;
+}
+
+.swiper-pagination-bullet-active {
+    background: #FFD700 !important;
+}
