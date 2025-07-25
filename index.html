@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bar RabuDiGalu | Experiencie o Melhor em Cocktails & Diversão</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'gold': '#FFD700',
+                        'dark-gold': '#B8860B',
+                        'rich-black': '#0B0B0B',
+                        'sophisticated-black': '#1a1a1a',
+                        'elegant-gray': '#2a2a2a',
+                        'premium-white': '#f5f5f5',
+                        'warm-amber': '#FF6F00',
+                        'sensual-red': '#8B0000',
+                    },
+                    fontFamily: {
+                        'display': ['Playfair Display', 'serif'],
+                        'body': ['Inter', 'sans-serif'],
+                    },
+                    backgroundImage: {
+                        'hero-pattern': "linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.7)), url('data:image/svg+xml,%3Csvg width='1920' height='1080' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='turbulence' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.1'/%3E%3C/svg%3E')",
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-rich-black text-premium-white font-body overflow-x-hidden">
+    <nav class="fixed top-0 w-full z-50 glass-effect">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center text-2xl font-display font-bold">
+                    <img src="imagens/logo.png" alt="Logo RabuDiGalu" class="h-10 mr-2">
+                    <span class="rabudigalu-colorful"><span>R</span><span>a</span><span>b</span><span>u</span><span>D</span><span>i</span><span>G</span><span>a</span><span>l</span><span>u</span></span><span class="text-premium-white">Bar</span>
+                </div>
+
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="text-premium-white hover:text-gold transition duration-300">Início</a>
+                    <a href="#" id="open-about-modal" class="text-premium-white hover:text-gold transition duration-300">Sobre</a>
+                    <a href="#gallery" class="text-premium-white hover:text-gold transition duration-300">Galeria</a>
+                    <a href="#" id="open-packages-modal" class="text-premium-white hover:text-gold transition duration-300">Pacotes</a>
+                    <a href="#reservation" class="text-premium-white hover:text-gold transition duration-300">Serviços</a>
+                </div>
+
+                <button id="mobile-menu-btn" class="md:hidden">
+                    <i class="fas fa-bars text-2xl text-gold"></i>
+                </button>
+            </div>
+
+            <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4">
+                <a href="#home" class="block py-2 text-premium-white hover:text-gold">Início</a>
+                <a href="#" id="open-about-modal-mobile" class="block py-2 text-premium-white hover:text-gold">Sobre</a>
+                <a href="#gallery" class="block py-2 text-premium-white hover:text-gold">Galeria</a>
+                <a href="#" id="open-packages-modal-mobile" class="block py-2 text-premium-white hover:text-gold">Pacotes</a>
+                    <a href="#reservation" class="block py-2 text-premium-white hover:text-gold">Serviços</a>
+                </div>
+            </div>
+        </nav>
+
+        <section id="home" class="h-screen flex items-center justify-center relative overflow-hidden">
+            <video autoplay muted loop id="background-video" class="absolute inset-0 w-full h-full object-cover">
+                <source src="videos/mixing.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="video-overlay absolute inset-0 w-full h-full"></div>
+            <div class="relative z-10 text-center">
+                <h1 class="text-6xl md:text-8xl font-display font-bold text-gold neon-text mb-4" data-aos="fade-up" data-aos-duration="1000">RabuDiGaluBar</h1>
+                <p class="text-xl md:text-2xl text-premium-white opacity-90 mb-8" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
+                    A arte da coquetelaria em cada gole.
+                </p>
+                <a href="#reservation" class="bg-gold text-rich-black px-8 py-3 rounded-full text-lg font-semibold hover:bg-warm-amber transition duration-300 transform hover:scale-105 inline-block" data-aos="fade-up" data-aos-delay="400" data-aos-duration="1000">
+                    Agende seu Evento
+                </a>
+            </div>
+        </section>
+
+        <section id="about" class="py-20 bg-sophisticated-black">
+            <div class="container mx-auto px-6">
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div data-aos="fade-right" data-aos-duration="1000">
+                        <h2 class="text-4xl font-display text-gold mb-6">Explore Mais Sobre Nós</h2>
+                        <p class="text-lg text-premium-white mb-4 opacity-90">
+                            Clique em "Sobre" na barra de navegação para conhecer nossa história e filosofia.
+                        </p>
+                        <p class="text-lg text-premium-white opacity-90">
+                            Ou se preferir, pode-se adicionar outro conteúdo aqui no futuro!
+                        </p>
+                    </div>
+                    <div data-aos="fade-left" data-aos-duration="1000" class="relative">
+                        <div class="gradient-border">
+                            <div class="gradient-border-inner">
+                                <img src="imagens/bar2.jpg" alt="Imagem Ilustrativa sobre a Essência do RabuDiGalu" class="w-full h-64 object-cover rounded-lg">
+                            </div>
+                        </div>
+                        <div class="absolute -bottom-4 -right-4 w-32 h-32 bg-gold opacity-20 rounded-full blur-xl"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="menu" class="py-20 bg-rich-black">
+            <div class="container mx-auto px-6">
+                <h2 data-aos="fade-down" class="text-4xl font-display text-gold text-center mb-12">Assinaturas do Chef de Bar</h2>
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div data-aos="fade-up" data-aos-delay="200" class="menu-item gradient-border hover-lift">
+                        <div class="gradient-border-inner">
+                            <h3 class="text-xl font-semibold text-gold mb-2">Aperol Spritz</h3>
+                            <p class="text-sm text-premium-white opacity-80 mb-2">Aperol, espumante, água com gás e gelo</p>
+                        </div>
+                    </div>
+
+                    <div data-aos="fade-up" data-aos-delay="400" class="menu-item gradient-border hover-lift">
+                        <div class="gradient-border-inner">
+                            <h3 class="text-xl font-semibold text-gold mb-2">Moscomule</h3>
+                            <p class="text-sm text-premium-white opacity-80 mb-2">Vodka, suco de limão, xarope de gengibre e espuma de gengibre</p>
+                        </div>
+                    </div>
+
+                    <div data-aos="fade-up" data-aos-delay="600" class="menu-item gradient-border hover-lift">
+                        <div class="gradient-border-inner">
+                            <h3 class="text-xl font-semibold text-gold mb-2">Caipirinha</h3>
+                            <p class="text-sm text-premium-white opacity-80 mb-2">Cachaça ou vodka, gelo e frutas</p>
+                        </div>
+                    </div>
+
+                    <div data-aos="fade-up" data-aos-delay="800" class="menu-item gradient-border hover-lift">
+                        <div class="gradient-border-inner">
+                            <h3 class="text-xl font-semibold text-gold mb-2">Soda Italiana</h3>
+                            <p class="text-sm text-premium-white opacity-80 mb-2">Frutas, xarope e espuma de gengibre</p>
+                        </div>
+                    </div>
+
+                    <div data-aos="fade-up" data-aos-delay="1000" class="menu-item gradient-border hover-lift">
+                        <div class="gradient-border-inner">
+                            <h3 class="text-xl font-semibold text-gold mb-2">Gin Tônica</h3>
+                            <p class="text-sm text-premium-white opacity-80 mb-2">Gin, Tônica e uma rodela de limão</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-center mt-12 py-10">
+                    <p class="text-gold text-lg">Em breve, um cardápio ainda mais completo!</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="gallery" class="py-20 bg-rich-black">
+            <div class="container mx-auto px-6">
+                <h2 data-aos="fade-down" class="text-4xl font-display text-gold text-center mb-12">Galeria de Eventos</h2>
+
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+
+                    <div data-aos="zoom-in" data-aos-delay="100" class="relative aspect-square rounded-lg overflow-hidden hover-lift cursor-pointer group gallery-item">
+                        <img src="imagens/bar1.jpg" alt="Foto do Bar 1" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 flex items-center justify-center">
+                            <i class="fas fa-search-plus text-white text-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></i>
+                        </div>
+                    </div>
+
+                    <div data-aos="zoom-in" data-aos-delay="400" class="relative aspect-square rounded-lg overflow-hidden hover-lift cursor-pointer group gallery-item">
+                        <img src="imagens/aperol4.jpg" alt="Foto de Aperol Spritz 4" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 flex items-center justify-center">
+                            <i class="fas fa-search-plus text-white text-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></i>
+                        </div>
+                    </div>
+
+                    <div data-aos="zoom-in" data-aos-delay="500" class="relative aspect-square rounded-lg overflow-hidden hover-lift cursor-pointer group gallery-item">
+                        <img src="imagens/negroni.jpg" alt="Foto de Negroni" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 flex items-center justify-center">
+                            <i class="fas fa-search-plus text-white text-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></i>
+                        </div>
+                    </div>
+
+                    <div data-aos="zoom-in" data-aos-delay="600" class="relative aspect-square rounded-lg overflow-hidden hover-lift cursor-pointer group gallery-item">
+                        <img src="imagens/aperol.jpg" alt="Foto de Aperol Spritz" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 flex items-center justify-center">
+                            <i class="fas fa-search-plus text-white text-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></i>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+       <section id="reservation" class="py-20 bg-sophisticated-black">
+        <div class="container mx-auto px-6">
+            <h2 data-aos="fade-down" class="text-4xl font-display text-gold text-center mb-8">Simule Seu Evento</h2>
+
+            <div class="max-w-2xl mx-auto">
+                <form data-aos="zoom-in" class="space-y-6">
+                    <div class="grid md:grid-cols-2 gap-5">
+                        <div>
+                            <label for="nome" class="block text-gold mb-2">Nome</label>
+                            <input type="text" id="nome" class="w-full px-4 py-3 bg-elegant-gray border border-gold rounded focus:outline-none focus:border-dark-gold text-premium-white" required>
+                        </div>
+                        <div>
+                            <label for="telefone" class="block text-gold mb-2">Telefone / WhatsApp</label>
+                            <input type="text" id="telefone" class="w-full px-4 py-3 bg-elegant-gray border border-gold rounded focus:outline-none focus:border-dark-gold text-premium-white" required>
+                        </div>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-5">
+                        <div>
+                            <label for="data" class="block text-gold mb-2">Data</label>
+                            <input type="date" id="data" class="w-full px-4 py-3 bg-elegant-gray border border-gold rounded focus:outline-none focus:border-dark-gold text-premium-white" required>
+                        </div>
+                        <div>
+                            <label for="horario" class="block text-gold mb-2">Horário</label>
+                            <select id="horario" class="w-full px-4 py-3 bg-elegant-gray border border-gold rounded focus:outline-none focus:border-dark-gold text-premium-white" required>
+                                <option value="" disabled selected>Selecione um horário</option>
+                                <option value="00:00">00:00</option>
+                                <option value="01:00">01:00</option>
+                                <option value="02:00">02:00</option>
+                                <option value="03:00">03:00</option>
+                                <option value="04:00">04:00</option>
+                                <option value="05:00">05:00</option>
+                                <option value="06:00">06:00</option>
+                                <option value="07:00">07:00</option>
+                                <option value="08:00">08:00</option>
+                                <option value="09:00">09:00</option>
+                                <option value="10:00">10:00</option>
+                                <option value="11:00">11:00</option>
+                                <option value="12:00">12:00</option>
+                                <option value="13:00">13:00</option>
+                                <option value="14:00">14:00</option>
+                                <option value="15:00">15:00</option>
+                                <option value="16:00">16:00</option>
+                                <option value="17:00">17:00</option>
+                                <option value="18:00">18:00</option>
+                                <option value="19:00">19:00</option>
+                                <option value="20:00">20:00</option>
+                                <option value="21:00">21:00</option>
+                                <option value="22:00">22:00</option>
+                                <option value="23:00">23:00</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label for="pessoas" class="block text-gold mb-2">Número de Pessoas</label>
+                        <select id="pessoas" class="w-full px-4 py-3 bg-elegant-gray border border-gold rounded focus:outline-none focus:border-dark-gold text-premium-white" required>
+                            <option>até 50 pessoas</option>
+                            <option>até 100 pessoas</option>
+                            <option>até 150 pessoas</option>
+                            <option>até 200 pessoas</option>
+                            <option>mais de 200 pessoas</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label for="pacote" class="block text-gold mb-2">Pacote</label>
+                        <select id="pacote" class="w-full px-4 py-3 bg-elegant-gray border border-gold rounded focus:outline-none focus:border-dark-gold text-premium-white" required>
+                            <option>Basic</option>
+                            <option>Premium</option>
+                        </select>
+                    </div>
+
+                    <div class="text-center">
+                        <button type="submit" class="bg-gold text-rich-black px-8 py-3 text-lg font-semibold hover:bg-dark-gold transition duration-300 hover-lift">
+                            Simular
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+        <footer class="bg-elegant-gray py-12">
+            <div class="container mx-auto px-6">
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div>
+                        <h3 class="text-2xl font-display text-gold mb-4"><span class="rabudigalu-colorful"><span>R</span><span>a</span><span>b</span><span>u</span><span>D</span><span>i</span><span>G</span><span>a</span><span>l</span><span>u</span></span> Bar</h3>
+                        <p class="text-sm opacity-70">Leve a mixologia premium do <span class="rabudigalu-colorful"><span>R</span><span>a</span><span>b</span><span>u</span><span>D</span><span>i</span><span>G</span><span>a</span><span>l</span><span>u</span></span> para o seu evento.</p>
+                    </div>
+
+                    <div>
+                        <h4 class="text-lg font-semibold text-gold mb-4">Contato</h4>
+                        <ul class="space-y-2 text-sm">
+                            <li>
+                                <a href="https://wa.me/5521994662628" target="_blank" style="display: flex; align-items: center; text-decoration: none; color: inherit;">
+                                    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" style="width: 24px; height: 24px; margin-right: 8px;">
+                                    <span class="text-premium-white hover:text-gold transition duration-300">(21) 99466-2628 <- (Clique AQUI!)</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="mailto:rabudigalueventos@gmail.com" style="display: flex; align-items: center; text-decoration: none; color: inherit;">
+                                    <img src="imagens/logo.png" alt="Email" style="width: 24px; height: 24px; margin-right: 8px;">
+                                    <span class="text-premium-white hover:text-gold transition duration-300">rabudigalueventos@gmail.com</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="text-lg font-semibold text-gold mb-4">Siga-nos</h4>
+                        <div class="flex space-x-4">
+                            <a href="#" class="text-xl hover:text-gold transition"><i class="fab fa-instagram"></i></a>
+                            <a href="#" class="text-xl hover:text-gold transition"><i class="fab fa-facebook"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="border-t border-gold opacity-20 mt-8 pt-8 text-center">
+                    <p class="text-sm opacity-70">&copy; 2024 BlackCode Bar. Todos os direitos reservados.</p>
+                </div>
+            </div>
+        </footer>
+
+        <div id="lightbox" class="modal-overlay">
+            <div class="modal-content">
+                <i class="fas fa-times modal-close"></i>
+                <img id="lightbox-img" src="" alt="Imagem Ampliada">
+            </div>
+        </div>
+
+        <div id="about-modal" class="modal-overlay">
+            <div class="modal-content max-w-lg mx-auto p-8 glass-effect">
+                <i class="fas fa-times modal-close" id="close-about-modal"></i>
+                <h2 class="text-4xl font-display text-gold mb-6 text-center">A Essência do <span class="rabudigalu-colorful"><span>R</span><span>a</span><span>b</span><span>u</span><span>D</span><span>i</span><span>G</span><span>a</span><span>l</span><span>u</span></span></h2>
+                <p class="text-lg text-premium-white mb-4 opacity-90">
+                    O <span class="rabudigalu-colorful"><span>R</span><span>a</span><span>b</span><span>u</span><span>D</span><span>i</span><span>G</span><span>a</span><span>l</span><span>u</span></span> nasce da visão de um barman com sólida experiência internacional. Após aprimorar-se por três anos na efervescente Lisboa, e com um currículo que inclui a parceria com a Campari em diversos eventos e o ensino em workshops de mixologia, a expertise em coquetelaria de ponta agora chega até você no Brasil.
+                </p>
+                <p class="text-lg text-premium-white opacity-90">
+                    Mais do que um serviço de bar, o <span class="rabudigalu-colorful"><span>R</span><span>a</span><span>b</span><span>u</span><span>D</span><span>i</span><span>G</span><span>a</span><span>l</span><span>u</span></span> é a promessa de uma experiência customizada e de altíssimo nível. Levamos toda a estrutura e o conhecimento técnico para transformar seu evento em um cenário de mixologia de excelência, onde a qualidade dos ingredientes e a arte da criação se unem para surpreender seus convidados a cada gole.
+                </p>
+            </div>
+        </div>
+
+        <div id="packages-modal" class="modal-overlay">
+            <div class="modal-content max-w-xl mx-auto p-8 glass-effect">
+                <i class="fas fa-times modal-close" id="close-packages-modal"></i>
+                <h2 class="text-4xl font-display text-gold mb-6 text-center">Nossos Pacotes de Experiência</h2>
+
+                <div class="mb-8">
+                    <h3 class="text-2xl font-semibold text-gold mb-3">Pacote Basic</h3>
+                    <p class="text-lg text-premium-white opacity-90">
+                        Para quem busca a essência da coquetelaria brasileira com um toque especial. Nosso Pacote **Basic** celebra a versatilidade da Caipirinha e Caipivodkas, preparadas com maestria utilizando cachaça ou vodka de qualidade nacional, o dulçor perfeito e uma seleção de frutas frescas. Uma opção vibrante para elevar a energia do seu evento.
+                    </p>
+                </div>
+
+                <div>
+                    <h3 class="text-2xl font-semibold text-gold mb-3">Pacote Premium</h3>
+                    <p class="text-lg text-premium-white opacity-90">
+                        Uma experiência de mixologia completa e sem preocupações. O Pacote **Premium** oferece um cardápio ampliado com a clássica Caipirinha e Caipivodka, a refrescância do Gin Tônica, o charme italiano do Aperol Spritz e a efervescência de um Espumante selecionado. Inclui todos os detalhes para um bar impecável: uma vasta gama de frutas frescas, copos elegantes, canudos, guardanapos, gelo cristalino e o açúcar na medida certa. A excelência em cada detalhe, para um evento verdadeiramente memorável.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+        <script src="script.js"></script>
+    <p style="border-radius: 8px; text-align: center; font-size: 12px; color: #fff; margin-top: 16px;position: fixed; left: 8px; bottom: 8px; z-index: 10; background: rgba(0, 0, 0, 0.8); padding: 4px 8px;">Made with <img src="https://enzostvs-deepsite.hf.space/logo.svg" alt="DeepSite Logo" style="width: 16px; height: 16px; vertical-align: middle;display:inline-block;margin-right:3px;filter:brightness(0) invert(1);"><a href="https://enzostvs-deepsite.hf.space" style="color: #fff;text-decoration: underline;" target="_blank" >DeepSite</a> - 🧬 <a href="https://enzostvs-deepsite.hf.space?remix=NomeAleatorioDiferentao/minha-nuvem" style="color: #fff;text-decoration: underline;" target="_blank" >Remix</a></p></body>
+</html>
