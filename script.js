@@ -183,7 +183,7 @@ document.addEventListener('DOMContentLoaded', function() {
             e.preventDefault();
             openModal(aboutModal);
             if (mobileMenu.classList.contains('mobile-menu-open')) {
-                toggleMobileMenu(); // Garante que o menu mobile feche ao abrir o modal
+                toggleMobileMenu();  // Garante que o menu mobile feche ao abrir o modal
             }
         });
     }
