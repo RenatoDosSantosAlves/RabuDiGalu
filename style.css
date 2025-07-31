@@ -34,8 +34,17 @@
 }
 
 .neon-text {
-    text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+    text-shadow:
+        0 0 7px #FFF, /* Luz central mais brilhante */
+        0 0 10px #FFD700, /* Base dourada */
+        0 0 21px #FFC000, /* Amarelo ouro */
+        0 0 42px #FFA500, /* Laranja */
+        0 0 82px #FF4500, /* Laranja avermelhado */
+        0 0 92px #FF0000, /* Vermelho */
+        0 0 102px #E00000,
+        0 0 151px #B00000; /* Vermelho escuro */
 }
+
 
 .parallax-bg {
     background-attachment: fixed;
@@ -44,20 +53,18 @@
     background-size: cover;
 }
 
-.scroll-indicator {
-    animation: bounce 2s infinite;
-}
-
+/* Scroll indicator */
 @keyframes bounce {
-    0%, 20%, 50%, 80%, 100% {
+    0%, 100% {
         transform: translateY(0);
     }
-    40% {
+    50% {
         transform: translateY(-10px);
     }
-    60% {
-        transform: translateY(-5px);
-    }
+}
+
+.scroll-indicator {
+    animation: bounce 1.5s infinite;
 }
 
 .menu-item {
@@ -84,13 +91,10 @@
     justify-content: center;
     align-items: center;
     z-index: 1000;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.3s ease, visibility 0.3s ease;
+    transition: opacity 0.3s ease, transform 0.3s ease; /* Adicionado transform para scale */
 }
-.modal-overlay.active {
-    opacity: 1;
-    visibility: visible;
+.modal-overlay.hidden {
+    display: none; /* Garante que o modal esteja completamente oculto quando não visível */
 }
 .modal-content {
     background: #1a1a1a;
@@ -101,13 +105,7 @@
     max-height: 90%;
     overflow-y: auto;
     position: relative;
-    transform: scale(0.9);
-    opacity: 0;
-    transition: transform 0.3s ease, opacity 0.3s ease;
-}
-.modal-overlay.active .modal-content {
-    transform: scale(1);
-    opacity: 1;
+    border: 1px solid #FFD700; /* Borda dourada */
 }
 .modal-content img {
     max-width: 100%;
@@ -129,93 +127,81 @@
     color: #FFD700;
 }
 
-/* Estilos para o nome RabuDiGalu com cores de rabo de galo e efeito neon */
+/* Estilos para o nome RabuDiGalu com cores de rabo de galo */
 .rabudigalu-colorful span {
-    display: inline-block; /* Garante que o span aceite transformações e shadows */
-    font-weight: bold; /* Para dar mais corpo à letra */
-    transition: all 0.2s ease-in-out; /* Transição suave para qualquer efeito futuro */
+    display: inline-block;
+    transition: all 0.3s ease;
 }
 
-.rabudigalu-colorful span:nth-child(1) {
-    color: #FFD700; /* Gold */
-    text-shadow: 0 0 5px #FFD700, 0 0 10px #FFD700, 0 0 15px #FFC400;
-}
-.rabudigalu-colorful span:nth-child(2) {
-    color: #FFC400; /* Brighter Gold */
-    text-shadow: 0 0 5px #FFC400, 0 0 10px #FFC400, 0 0 15px #FFAB00;
-}
-.rabudigalu-colorful span:nth-child(3) {
-    color: #FFAB00; /* Orange-Gold */
-    text-shadow: 0 0 5px #FFAB00, 0 0 10px #FFAB00, 0 0 15px #FF8C00;
-}
-.rabudigalu-colorful span:nth-child(4) {
-    color: #FF8C00; /* Dark Orange */
-    text-shadow: 0 0 5px #FF8C00, 0 0 10px #FF8C00, 0 0 15px #FF6F00;
-}
-.rabudigalu-colorful span:nth-child(5) {
-    color: #FF6F00; /* Warm Amber */
-    text-shadow: 0 0 5px #FF6F00, 0 0 10px #FF6F00, 0 0 15px #FF4F00;
-}
-.rabudigalu-colorful span:nth-child(6) {
-    color: #FF4F00; /* Deep Orange-Red */
-    text-shadow: 0 0 5px #FF4F00, 0 0 10px #FF4F00, 0 0 15px #FF3333;
-}
-.rabudigalu-colorful span:nth-child(7) {
-    color: #FF3333; /* Vibrant Red */
-    text-shadow: 0 0 5px #FF3333, 0 0 10px #FF3333, 0 0 15px #E60000;
-}
-.rabudigalu-colorful span:nth-child(8) {
-    color: #E60000; /* Strong Red */
-    text-shadow: 0 0 5px #E60000, 0 0 10px #E60000, 0 0 15px #FF6666;
-}
-.rabudigalu-colorful span:nth-child(9) {
-    color: #FF6666; /* Lighter Red */
-    text-shadow: 0 0 5px #FF6666, 0 0 10px #FF6666, 0 0 15px #FF9999;
-}
-.rabudigalu-colorful span:nth-child(10) {
-    color: #FF9999; /* Pinkish Red */
-    text-shadow: 0 0 5px #FF9999, 0 0 10px #FF9999, 0 0 15px #FFD700;
-}
+/* Aumentei a intensidade do text-shadow aqui para um efeito mais "neon" na navbar */
+.rabudigalu-colorful span:nth-child(1) { color: #FFEB3B; text-shadow: 0 0 10px #FFEB3B; } /* R - Amarelo mais vibrante */
+.rabudigalu-colorful span:nth-child(2) { color: #FFC107; text-shadow: 0 0 10px #FFC107; } /* a - Âmbar */
+.rabudigalu-colorful span:nth-child(3) { color: #FF9800; text-shadow: 0 0 10px #FF9800; } /* b - Laranja */
+.rabudigalu-colorful span:nth-child(4) { color: #FB8C00; text-shadow: 0 0 10px #FB8C00; } /* u - Laranja mais forte */
+.rabudigalu-colorful span:nth-child(5) { color: #F4511E; text-shadow: 0 0 10px #F4511E; } /* D - Laranja Avermelhado */
+.rabudigalu-colorful span:nth-child(6) { color: #E64A19; text-shadow: 0 0 10px #E64A19; } /* i - Laranja Escuro */
+.rabudigalu-colorful span:nth-child(7) { color: #D84315; text-shadow: 0 0 10px #D84315; } /* G - Laranja Queimado */
+.rabudigalu-colorful span:nth-child(8) { color: #C2185B; text-shadow: 0 0 10px #C2185B; } /* a - Rosa Escuro */
+.rabudigalu-colorful span:nth-child(9) { color: #AD1457; text-shadow: 0 0 10px #AD1457; } /* l - Rosa mais escuro */
+.rabudigalu-colorful span:nth-child(10) { color: #880E4F; text-shadow: 0 0 10px #880E4F; } /* u - Vinho */
 
-/* Mantenha o restante do seu style.css como está */
-/* Swiper custom styles */
-.instagram-swiper {
-    width: 100%;
-    height: 400px; /* Altura fixa para o carrossel */
-    margin-bottom: 2rem;
-}
 
-.swiper-slide {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #0b0b0b; /* Fundo escuro para os slides */
-    border-radius: 8px;
-    overflow: hidden;
-}
-
-.swiper-slide img {
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.3s ease-in-out;
-}
-
-.swiper-slide:hover img {
-    transform: scale(1.05);
-}
-
-/* Navegação e Paginação Swiper */
+/* Swiper navigation buttons */
 .swiper-button-next,
 .swiper-button-prev {
-    color: #FFD700 !important; /* Cor dos botões de navegação */
-}
-
-.swiper-pagination-bullet {
-    background: rgba(255, 255, 255, 0.5) !important;
+    color: #FFD700 !important; /* Gold */
 }
 
 .swiper-pagination-bullet-active {
-    background: #FFD700 !important;
+    background-color: #FFD700 !important; /* Gold */
+}
+
+/* --- AJUSTES PARA O MENU HAMBÚRGUER E RESPONSIVIDADE --- */
+
+/* Estado INICIAL do menu mobile (fechado) */
+.mobile-menu-closed {
+    max-height: 0; /* Altura 0 para esconder */
+    overflow: hidden; /* Esconde conteúdo que transborda */
+    opacity: 0;    /* Opacidade 0 para esconder */
+    visibility: hidden; /* Garante que não é interacionável */
+    transition: max-height 0.5s ease-out, opacity 0.3s ease-out, visibility 0.3s ease-out; /* Transição suave ao fechar */
+}
+
+/* Estado ABERTO do menu mobile */
+.mobile-menu-open {
+    max-height: 500px; /* Altura grande o suficiente para o conteúdo */
+    opacity: 1;    /* Totalmente visível */
+    visibility: visible; /* Torna-o visível e interacionável */
+    transition: max-height 0.5s ease-in, opacity 0.3s ease-in, visibility 0.3s ease-in; /* Transição suave ao abrir */
+}
+
+/* Para evitar scroll no corpo quando o modal ou menu estiverem abertos */
+body.no-scroll {
+    overflow: hidden;
+}
+
+/* Garante que o menu desktop seja HIDDEN em telas menores que o breakpoint 'md' (768px) */
+@media (max-width: 767px) {
+    #desktop-menu {
+        display: none !important; /* Esconde os links do desktop no mobile */
+    }
+
+    #mobile-menu-btn {
+        display: block !important; /* Mostra o hambúrguer no mobile */
+    }
+}
+
+/* Garante que o menu desktop seja visível e o mobile HIDDEN em telas maiores que o breakpoint 'md' (768px) */
+@media (min-width: 768px) { /* Corresponde ao `md:` do Tailwind */
+    #mobile-menu-btn {
+        display: none !important; /* Esconde o hambúrguer no desktop */
+    }
+
+    #desktop-menu {
+        display: flex !important; /* Mostra os links do desktop */
+    }
+
+    #mobile-menu {
+        display: none !important; /* Esconde o menu mobile no desktop */
+    }
 }

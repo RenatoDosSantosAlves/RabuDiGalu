@@ -43,13 +43,14 @@
             <div class="flex justify-between items-center">
                 <div class="flex-1 flex justify-start items-center md:justify-start">
                     <img src="imagens/logo.png" alt="Logo RabuDiGalu" class="h-8 md:h-10 mr-2">
-                    <span class="rabudigalu-colorful text-base md:text-xl lg:text-2xl whitespace-nowrap"><span>R</span><span>a</span><span>b</span><span>u</span><span>D</span><span>i</span><span>G</span><span>a</span><span>l</span><span>u</span></span><span class="text-premium-white text-base md:text-xl lg:text-2xl whitespace-nowrap">Bar</span>
+                    <span class="rabudigalu-colorful text-base md:text-xl lg:text-2xl whitespace-nowrap neon-text"><span>R</span><span>a</span><span>b</span><span>u</span><span>D</span><span>i</span><span>G</span><span>a</span><span>l</span><span>u</span></span><span class="text-premium-white text-base md:text-xl lg:text-2xl whitespace-nowrap">Bar</span>
                 </div>
 
-                <div class="hidden md:flex space-x-8">
+                <div id="desktop-menu" class="hidden md:flex space-x-8">
                     <a href="#home" class="text-premium-white hover:text-gold transition duration-300">Início</a>
                     <a href="#" id="open-about-modal" class="text-premium-white hover:text-gold transition duration-300">Sobre</a>
                     <a href="#gallery" class="text-premium-white hover:text-gold transition duration-300">Galeria</a>
+                    <a href="#instagram-feed-section" class="text-premium-white hover:text-gold transition duration-300">Instagram</a>
                     <a href="#" id="open-packages-modal" class="text-premium-white hover:text-gold transition duration-300">Pacotes</a>
                     <a href="#reservation" class="text-premium-white hover:text-gold transition duration-300">Serviços</a>
                 </div>
@@ -59,12 +60,13 @@
                 </button>
             </div>
 
-            <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4">
-                <a href="#home" class="block py-2 text-premium-white hover:text-gold">Início</a>
-                <a href="#" id="open-about-modal-mobile" class="block py-2 text-premium-white hover:text-gold">Sobre</a>
-                <a href="#gallery" class="block py-2 text-premium-white hover:text-gold">Galeria</a>
-                <a href="#" id="open-packages-modal-mobile" class="block py-2 text-premium-white hover:text-gold">Pacotes</a>
-                <a href="#reservation" class="block py-2 text-premium-white hover:text-gold">Serviços</a>
+            <div id="mobile-menu" class="mobile-menu-closed md:hidden mt-4 pb-4 px-6 bg-sophisticated-black transition-all duration-300">
+                <a href="#home" class="block py-2 text-premium-white hover:text-gold mobile-menu-link px-6">Início</a>
+                <a href="#" id="open-about-modal-mobile" class="block py-2 text-premium-white hover:text-gold mobile-menu-link px-6">Sobre</a>
+                <a href="#gallery" class="block py-2 text-premium-white hover:text-gold mobile-menu-link px-6">Galeria</a>
+                <a href="#instagram-feed-section" class="block py-2 text-premium-white hover:text-gold mobile-menu-link px-6">Instagram</a>
+                <a href="#" id="open-packages-modal-mobile" class="block py-2 text-premium-white hover:text-gold mobile-menu-link px-6">Pacotes</a>
+                <a href="#reservation" class="block py-2 text-premium-white hover:text-gold mobile-menu-link px-6">Serviços</a>
             </div>
         </div>
     </nav>
@@ -76,7 +78,7 @@
         </video>
         <div class="video-overlay absolute inset-0 w-full h-full"></div>
         <div class="relative z-10 text-center">
-            <h1 class="text-5xl md:text-7xl lg:text-8xl font-display font-bold text-gold neon-text mb-4" data-aos="fade-up" data-aos-duration="1000">RabuDiGaluBar</h1>
+            <h1 class="text-5xl md:text-7xl lg:text-8xl font-display font-bold text-gold mb-4" data-aos="fade-up" data-aos-duration="1000">RabuDiGaluBar</h1>
             <p class="text-xl md:text-2xl text-premium-white opacity-90 mb-8" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
                 A arte da coquetelaria em cada gole.
             </p>
@@ -158,87 +160,72 @@
     </section>
 
     <section id="gallery" class="py-20 bg-rich-black">
-        <div class="container mx-auto px-6">
-            <h2 data-aos="fade-down" class="text-4xl font-display text-gold text-center mb-12">Galeria de Eventos</h2>
+        <div class="container mx-auto px-6 text-center">
+            <h2 data-aos="fade-down" class="text-4xl font-display text-gold mb-12">Galeria de Eventos</h2>
 
-            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-
-                <div data-aos="zoom-in" data-aos-delay="100" class="relative aspect-square rounded-lg overflow-hidden hover-lift cursor-pointer group gallery-item">
-                    <img src="imagens/bar1.jpg" alt="Foto do Bar 1" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
-                    <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 flex items-center justify-center">
-                        <i class="fas fa-search-plus text-white text-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></i>
-                    </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div data-aos="fade-up" class="gallery-item">
+                    <img src="imagens/bar1.jpg" alt="Evento RabuDiGalu 1" class="w-full h-64 object-cover rounded-lg shadow-lg">
                 </div>
-
-                <div data-aos="zoom-in" data-aos-delay="400" class="relative aspect-square rounded-lg overflow-hidden hover-lift cursor-pointer group gallery-item">
-                    <img src="imagens/aperol4.jpg" alt="Foto de Aperol Spritz 4" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
-                    <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 flex items-center justify-center">
-                        <i class="fas fa-search-plus text-white text-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></i>
-                    </div>
+                <div data-aos="fade-up" data-aos-delay="100" class="gallery-item">
+                    <img src="imagens/aperol4.jpg" alt="Evento RabuDiGalu 2" class="w-full h-64 object-cover rounded-lg shadow-lg">
                 </div>
-
-                <div data-aos="zoom-in" data-aos-delay="500" class="relative aspect-square rounded-lg overflow-hidden hover-lift cursor-pointer group gallery-item">
-                    <img src="imagens/negroni.jpg" alt="Foto de Negroni" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
-                    <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 flex items-center justify-center">
-                        <i class="fas fa-search-plus text-white text-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></i>
-                    </div>
+                <div data-aos="fade-up" data-aos-delay="200" class="gallery-item">
+                    <img src="imagens/negroni.jpg" alt="Evento RabuDiGalu 3" class="w-full h-64 object-cover rounded-lg shadow-lg">
                 </div>
-
-                <div data-aos="zoom-in" data-aos-delay="600" class="relative aspect-square rounded-lg overflow-hidden hover-lift cursor-pointer group gallery-item">
-                    <img src="imagens/aperol.jpg" alt="Foto de Aperol Spritz" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
-                    <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 flex items-center justify-center">
-                        <i class="fas fa-search-plus text-white text-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></i>
-                    </div>
+                <div data-aos="fade-up" data-aos-delay="300" class="gallery-item">
+                    <img src="imagens/aperol.jpg" alt="Evento RabuDiGalu 4" class="w-full h-64 object-cover rounded-lg shadow-lg">
                 </div>
-
+                <div data-aos="fade-up" data-aos-delay="400" class="gallery-item">
+                    <img src="imagens/bar2.jpg" alt="Evento RabuDiGalu 5" class="w-full h-64 object-cover rounded-lg shadow-lg">
+                </div>
+                <div data-aos="fade-up" data-aos-delay="500" class="gallery-item">
+                    <img src="imagens/moscomule.jpg" alt="Evento RabuDiGalu 6" class="w-full h-64 object-cover rounded-lg shadow-lg">
+                </div>
             </div>
         </div>
     </section>
 
-    <section id="instagram-feed" class="py-20 bg-elegant-gray">
+    <section id="instagram-feed-section" class="py-6 bg-sophisticated-black">
         <div class="container mx-auto px-6 text-center">
-            <h2 data-aos="fade-down" class="text-4xl font-display text-gold mb-12">Nosso Instagram</h2>
-            <p class="text-lg text-premium-white opacity-90 mb-8" data-aos="fade-up">
-                Acompanhe o dia a dia dos nossos eventos e coquetéis exclusivos!
-            </p>
+            <h2 data-aos="fade-down" class="text-4xl font-display text-gold mb-12">Direto do Instagram</h2>
 
-            <div class="swiper-container instagram-swiper" data-aos="fade-up" data-aos-delay="200">
+            <div id="instagram" class="swiper instagram-swiper w-full max-w-5xl mx-auto" data-aos="fade-up" data-aos-delay="200">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
-                        <img src="https://via.placeholder.com/400x400?text=Instagram+Post+1" alt="Instagram Post 1" class="rounded-lg shadow-lg w-full h-full object-cover">
+                        <img src="imagens/bar1.jpg" alt="Post Instagram 1" class="w-full h-auto object-cover rounded-lg shadow-lg border-2 border-gold">
                     </div>
                     <div class="swiper-slide">
-                        <img src="https://via.placeholder.com/400x400?text=Instagram+Post+2" alt="Instagram Post 2" class="rounded-lg shadow-lg w-full h-full object-cover">
+                        <img src="imagens/aperol4.jpg" alt="Post Instagram 2" class="w-full h-auto object-cover rounded-lg shadow-lg border-2 border-gold">
                     </div>
                     <div class="swiper-slide">
-                        <img src="https://via.placeholder.com/400x400?text=Instagram+Post+3" alt="Instagram Post 3" class="rounded-lg shadow-lg w-full h-full object-cover">
+                        <img src="imagens/negroni.jpg" alt="Post Instagram 3" class="w-full h-auto object-cover rounded-lg shadow-lg border-2 border-gold">
                     </div>
                     <div class="swiper-slide">
-                        <img src="https://via.placeholder.com/400x400?text=Instagram+Post+4" alt="Instagram Post 4" class="rounded-lg shadow-lg w-full h-full object-cover">
+                        <img src="imagens/aperol.jpg" alt="Post Instagram 4" class="w-full h-auto object-cover rounded-lg shadow-lg border-2 border-gold">
                     </div>
                     <div class="swiper-slide">
-                        <img src="https://via.placeholder.com/400x400?text=Instagram+Post+5" alt="Instagram Post 5" class="rounded-lg shadow-lg w-full h-full object-cover">
+                        <img src="imagens/moscomule.jpg" alt="Post Instagram 5" class="w-full h-auto object-cover rounded-lg shadow-lg border-2 border-gold">
                     </div>
                     <div class="swiper-slide">
-                        <img src="https://via.placeholder.com/400x400?text=Instagram+Post+6" alt="Instagram Post 6" class="rounded-lg shadow-lg w-full h-full object-cover">
+                        <img src="imagens/gin-tonica.jpg" alt="Post Instagram 6" class="w-full h-auto object-cover rounded-lg shadow-lg border-2 border-gold">
                     </div>
-                </div>
+                    </div>
                 <div class="swiper-pagination"></div>
                 <div class="swiper-button-next text-gold"></div>
                 <div class="swiper-button-prev text-gold"></div>
             </div>
 
-            <a href="https://www.instagram.com/rabudigalu/" target="_blank" class="mt-10 inline-block bg-gold text-rich-black px-8 py-3 rounded-full text-lg font-semibold hover:bg-warm-amber transition duration-300 transform hover:scale-105" data-aos="fade-up" data-aos-delay="400">
-                <i class="fab fa-instagram mr-2"></i>Siga no Instagram
-            </a>
+            <a href="https://instagram.com/seunome.rabudigalu" target="_blank" class="mt-6 inline-block bg-gold text-rich-black font-bold py-3 px-8 rounded-full text-lg hover:bg-dark-gold transition-colors duration-300 hover-lift">Visite nosso Instagram Profissional</a>
         </div>
     </section>
+
     <section id="reservation" class="py-20 bg-sophisticated-black">
         <div class="container mx-auto px-6">
             <h2 data-aos="fade-down" class="text-4xl font-display text-gold text-center mb-8">Simule Seu Evento</h2>
 
             <div class="max-w-2xl mx-auto">
-                <form data-aos="zoom-in" class="space-y-6">
+                <form id="simulation-form" data-aos="zoom-in" class="space-y-6">
                     <div class="grid md:grid-cols-2 gap-5">
                         <div>
                             <label for="nome" class="block text-gold mb-2">Nome</label>
@@ -319,7 +306,7 @@
         <div class="container mx-auto px-6">
             <div class="grid md:grid-cols-3 gap-8">
                 <div>
-                    <h3 class="text-2xl font-display text-gold mb-4"><span class="rabudigalu-colorful"><span>R</span><span>a</span><span>b</span><span>u</span><span>D</span><span>i</span><span>G</span><span>a</span><span>l</span><span>u</span></span> Bar</h3>
+                    <h3 class="text-2xl font-display text-gold mb-4"><span class="rabudigalu-colorful neon-text"><span>R</span><span>a</span><span>b</span><span>u</span><span>D</span><span>i</span><span>G</span><span>a</span><span>l</span><span>u</span></span> Bar</h3>
                     <p class="text-sm opacity-70">Leve a mixologia premium do <span class="rabudigalu-colorful"><span>R</span><span>a</span><span>b</span><span>u</span><span>D</span><span>i</span><span>G</span><span>a</span><span>l</span><span>u</span></span> para o seu evento.</p>
                 </div>
 
@@ -343,8 +330,8 @@
                 <div>
                     <h4 class="text-lg font-semibold text-gold mb-4">Siga-nos</h4>
                     <div class="flex space-x-4">
-                        <a href="https://www.instagram.com/rabudigalu/" target="_blank" class="text-xl hover:text-gold transition"><i class="fab fa-instagram"></i></a>
-                        <a href="https://www.facebook.com/seufacebook" target="_blank" class="text-xl hover:text-gold transition"><i class="fab fa-facebook"></i></a>
+                        <a href="https://instagram.com/seunome.rabudigalu" target="_blank" class="text-xl hover:text-gold transition"><i class="fab fa-instagram"></i></a>
+                        <a href="https://tiktok.com/@seunome.rabudigalu" target="_blank" class="text-xl hover:text-gold transition"><i class="fab fa-tiktok"></i></a>
                     </div>
                 </div>
             </div>
@@ -355,14 +342,14 @@
         </div>
     </footer>
 
-    <div id="lightbox" class="modal-overlay">
+    <div id="lightbox" class="modal-overlay hidden opacity-0 scale-95">
         <div class="modal-content">
             <i class="fas fa-times modal-close"></i>
             <img id="lightbox-img" src="" alt="Imagem Ampliada">
         </div>
     </div>
 
-    <div id="about-modal" class="modal-overlay">
+    <div id="about-modal" class="modal-overlay hidden opacity-0 scale-95">
         <div class="modal-content max-w-lg mx-auto p-8 glass-effect">
             <i class="fas fa-times modal-close" id="close-about-modal"></i>
             <h2 class="text-4xl font-display text-gold mb-6 text-center">A Essência do <span class="rabudigalu-colorful"><span>R</span><span>a</span><span>b</span><span>u</span><span>D</span><span>i</span><span>G</span><span>a</span><span>l</span><span>u</span></span></h2>
@@ -375,7 +362,7 @@
         </div>
     </div>
 
-    <div id="packages-modal" class="modal-overlay">
+    <div id="packages-modal" class="modal-overlay hidden opacity-0 scale-95">
         <div class="modal-content max-w-xl mx-auto p-8 glass-effect">
             <i class="fas fa-times modal-close" id="close-packages-modal"></i>
             <h2 class="text-4xl font-display text-gold mb-6 text-center">Nossos Pacotes de Experiência</h2>
@@ -388,7 +375,7 @@
             </div>
 
             <div>
-                <h3 class="text-2xl font-semibold text-gold mb-3">Pacote Premium</h3>
+                <h3 class="2xl font-semibold text-gold mb-3">Pacote Premium</h3>
                 <p class="text-lg text-premium-white opacity-90">
                     Uma experiência de mixologia completa e sem preocupações. O Pacote **Premium** oferece um cardápio ampliado com a clássica Caipirinha e Caipivodka, a refrescância do Gin Tônica, o charme italiano do Aperol Spritz e a efervescência de um Espumante selecionado. Inclui todos os detalhes para um bar impecável: uma vasta gama de frutas frescas, copos elegantes, canudos, guardanapos, gelo cristalino e o açúcar na medida certa. A excelência em cada detalhe, para um evento verdadeiramente memorável.
                 </p>
@@ -396,8 +383,8 @@
         </div>
     </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
